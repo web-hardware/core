@@ -1,14 +1,46 @@
 {
-  "name": "core",
+  "name": "@web-hardware/core",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "The heart of web-hardware — core utilities and primitives for hardware-adjacent web APIs.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-hardware/core.git"
   },
-  "keywords": [],
-  "author": "",
+  "bugs": {
+    "url": "https://github.com/web-hardware/core/issues"
+  },
+  "homepage": "https://github.com/web-hardware/core#readme",
+  "keywords": [
+    "web-hardware",
+    "hardware",
+    "web-api",
+    "browser"
+  ],
+  "author": "web-hardware",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "prepublishOnly": "pnpm build",
+    "preview": "vite preview"
+  },
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
@@ -16,8 +48,10 @@
       "onFail": "download"
     }
   },
-  "type": "module",
   "devDependencies": {
-    "vite": "^8.2.2"
+    "@typescript/typescript6": "^6.0.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vite-plugin-dts": "^5.1.0"
   }
 }

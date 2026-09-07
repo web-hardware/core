@@ -1,0 +1,1 @@
+Object.defineProperty(exports,Symbol.toStringTag,{value:`Module`});function e(e){return`Hello, ${e}!`}exports.hello=e;
